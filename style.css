@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", "Times New Roman", Georgia, serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h3, h4, h5 {
+  margin: 25px 0 10px;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  width: 60%;
+  margin: 50px auto;
+}
+
+nav {
+  height: 50px;
+  box-shadow: 1px -8px 12px black;
+  transition: 150ms;
+}
+
+nav:hover {
+  box-shadow: 0px 80px 300px 50px black;
+}
+
+@media (min-width: 769px) {
+  .menu {
+    display: flex;
+    margin-left: 15%;
+  }
+
+  .menu-item {
+    margin-bottom: 3px;
+    padding: 7px 10px;
+    line-height: 33px;
+    cursor: pointer;
+    transition: 300ms;
+  }
+
+  .menu-item:hover {
+    background-color: rgba(255, 237, 164, 0.8);
+    border-bottom: 3px solid rgb(255, 145, 0);
+  }
+
+  .submenu {
+    position: absolute;
+    display: none;
+    justify-content: space-around;
+    left: 0;
+    width: 80%;
+    margin: 10px 10%;
+    padding: 15px 10px;
+    font-size: 0.95em;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0px 5px 12px -5px black;
+  }
+  @media (max-width: 810px) {
+    .submenu {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+
+  .menu-item:hover .submenu {
+    display: flex;
+  }
+
+  .submenu-item a {
+    padding: 10px;
+  }
+
+  .submenu-item a:hover {
+    text-decoration: underline;
+    background-color: rgba(250, 210, 50, 0.7);
+  }
+
+  .submenu-item ul {
+    font-size: 0.9em;
+    font-weight: 300;
+    list-style: none;
+  }
+}
+
+@media (max-width: 768px) {
+  nav:hover {
+    box-shadow: 1px -8px 12px black;
+  }
+
+  .burger-menu {
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    background-color: rgba(42, 42, 42, .1);
+    cursor: pointer;
+    z-index: 50;
+  }
+
+  .burger-menu-lines,
+  .burger-menu-lines::before,
+  .burger-menu-lines::after {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    transition: top .2s ease-in .2s, transform .2s ease-in;
+  }
+
+  .burger-menu-lines {
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%,-50%);
+  }
+
+  .burger-menu-lines::before {
+    content: '';
+    top: 5px;
+  }
+
+  .burger-menu-lines::after {
+    content: '';
+    top: -5px;
+  }
+
+  .open .burger-menu-lines {
+    background-color: transparent;
+  }
+
+  .open .burger-menu-lines::before{
+    top: 0px;
+    transform: rotate(-45deg);
+    transition: top .2s ease-in, transform .2s ease-in .2s;
+  }
+  .open .burger-menu-lines::after {
+    top: 0px;
+    transform: rotate(45deg);
+    transition: top .2s ease-in, transform .2s ease-in .2s;
+  }
+
+  nav .close {
+    top: calc(-100vh - 40px);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(180, 180, 180);
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: calc(100vh - 50px);
+    margin: 0;
+    margin-top: 50px;
+    box-shadow: 0px 0px 25px -10px black;
+    transition: 300ms;
+    overflow-y: auto;
+    scrollbar-width: 1px;
+  }
+
+  .menu-item {
+    position: relative;
+    padding: 7px 20px;
+    line-height: 33px;
+    background-color: #fff;
+    box-shadow: inset 0px 5px 7px -10px black;
+  }
+
+  .menu-item-active {
+    background-color: rgb(241, 241, 241);
+  }
+
+  .menu-but,
+  .submenu-but {
+    position: absolute;
+    width: 40px;
+    height: 33px;
+    top: 8px;
+    right: 3px;
+    border-left: 1px solid black;
+  }
+
+  .menu-arrow,
+  .submenu-arrow {
+    position: absolute;
+    top: 11px;
+    right: 13px;
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    padding: 5px;
+    transform: rotate(45deg);
+    transition: 200ms;
+  }
+
+  .menu-item-active .menu-arrow,
+  .submenu-item-active .submenu-arrow {
+    transform: rotate(225deg);
+  }
+
+  .submenu {
+    display: none;
+    padding: 15px 0px;
+    font-size: 0.9em;
+  }
+  
+  .menu-item-active .submenu {
+    display: block;
+  }
+
+  .submenu-item {
+    position: relative;
+    width: 100%;
+    padding: 7px 0px;
+    box-shadow: 0px 5px 7px -10px black;
+  }
+
+  .submenu-item-active {
+    background-color: #fff;
+    box-shadow: 0px 0px 5px -3px black;
+  }
+
+  .submenu-item a {
+    padding-left: 10px;
+  }
+
+  .submenu ul {
+    display: none;
+  }
+  .submenu-item-active ul {
+    display: block;
+    padding-left: 15px;
+   
+  }
+}
